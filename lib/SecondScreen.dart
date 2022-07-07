@@ -97,7 +97,12 @@ class _SecondScreenState extends State<SecondScreen> {
                               builder: (context) => ThirdScreen(),
                             ));
                         setState(() {
-                          username = result;
+                          if (result == null){
+                            username = username;
+                          }
+                          else{
+                            username = result.toString();
+                          }
                         });
                       },
                       child: Text(
